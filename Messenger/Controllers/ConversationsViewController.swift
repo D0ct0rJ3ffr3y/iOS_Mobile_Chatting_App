@@ -53,16 +53,21 @@ class ConversationsViewController: UIViewController {
         view.addSubview(tableView)
         setupTableView()
         fetchConversations()
+        startListeningForConversations()
     }
     
     private func startListeningForConversations(){
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
-        return
+            return
     }
+        print("starting conversation fetch")
+        
         let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+        
         DatabaseManager.shared.getAllConversations(for: safeEmail, completion: {[weak self] result in
             switch result{
             case .success(let conversations):
+                print("succesfully got conversation models")
                 guard !conversations.isEmpty else {
                     return
                 }
@@ -130,6 +135,7 @@ class ConversationsViewController: UIViewController {
 }
 
 extension ConversationsViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return conversations.count
     }

@@ -34,12 +34,11 @@ class ConversationTableViewCell: UITableViewCell {
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(userImageView)
         contentView.addSubview(userNameLabel)
         contentView.addSubview(userMessageLabel)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +59,7 @@ class ConversationTableViewCell: UITableViewCell {
                                      height: (contentView.height-20)/2)
         
         userMessageLabel.frame = CGRect(x: userImageView.right + 10,
-                                        y: userNameLabel.height + 10,
+                                        y: userNameLabel.bottom + 10,
                                         width: contentView.width - 20 - userImageView.width,
                                         height: (contentView.height-20)/2)
     }
@@ -77,6 +76,7 @@ class ConversationTableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     self?.userImageView.sd_setImage(with: url, completed: nil)
                 }
+                
             case.failure(let error):
                 print("failed to get image url: \(error)")
             }
