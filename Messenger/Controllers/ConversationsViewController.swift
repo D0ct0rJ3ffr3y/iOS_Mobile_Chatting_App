@@ -161,8 +161,9 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func tableView(_tableView: UITableView, heightForRotAt indexPath: IndexPath) -> CGFloat{
-        return 120
+    func tableView(_tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        120
+        
     }
 }
 
