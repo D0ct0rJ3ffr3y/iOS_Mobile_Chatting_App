@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1SF-dQ-9Mw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1SF-dQ-9Mw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -57,7 +57,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Vzt-UB-0Bd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fs1-BM-5mw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="1SF-dQ-9Mw" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c8E-Zs-EuF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -69,6 +68,7 @@
                         <segue destination="1bl-rf-GHN" kind="relationship" relationship="viewControllers" id="NNG-2g-7in"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fs1-BM-5mw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-572" y="-15"/>
         </scene>
@@ -76,7 +76,7 @@
         <scene sceneID="QFy-4m-lNW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bAP-aG-Tgs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="s0W-XO-Edi"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="message" catalog="system" id="s0W-XO-Edi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AiR-9N-ly1">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -95,7 +95,7 @@
         <scene sceneID="Z8I-uU-rAL">
             <objects>
                 <navigationController id="1bl-rf-GHN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="uRF-mO-71a"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="uRF-mO-71a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="T9w-Zf-fQh">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,4 +109,8 @@
             <point key="canvasLocation" x="-22" y="696"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
