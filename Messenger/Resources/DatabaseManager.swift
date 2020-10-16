@@ -463,7 +463,7 @@ extension DatabaseManager{
                     let location = Location(location: CLLocation(latitude: latitude, longitude: longitude),
                                             size: CGSize(width: 300, height: 300))
                     kind = .location(location)
-                    
+                     
                 }
                 else{
                     kind = .text(content)
@@ -531,7 +531,6 @@ extension DatabaseManager{
             case .location(let locationData):
                 let location = locationData.location
                 message = "\(location.coordinate.longitude), \(location.coordinate.latitude)"
-                
                 break
             case .emoji(_):
                 break
