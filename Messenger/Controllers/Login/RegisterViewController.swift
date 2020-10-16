@@ -42,7 +42,7 @@
             
             field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
             field.leftViewMode = .always
-            field.backgroundColor = .white
+            field.backgroundColor = .secondarySystemBackground
             return field
         }()
         
@@ -58,7 +58,7 @@
             
             field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
             field.leftViewMode = .always
-            field.backgroundColor = .white
+            field.backgroundColor = .secondarySystemBackground
             return field
         }()
         
@@ -74,7 +74,7 @@
             
             field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
             field.leftViewMode = .always
-            field.backgroundColor = .white
+            field.backgroundColor = .secondarySystemBackground
             return field
         }()
         
@@ -90,7 +90,7 @@
             
             field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
             field.leftViewMode = .always
-            field.backgroundColor = .white
+            field.backgroundColor = .secondarySystemBackground
             
             field.isSecureTextEntry = true
             return field
@@ -110,7 +110,7 @@
         override func viewDidLoad() {
             super.viewDidLoad()
             title = "Log In"
-            view.backgroundColor = .white
+            view.backgroundColor = .systemBackground
             
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                                 style: .done,
