@@ -10,7 +10,7 @@
     import FirebaseAuth
     import JGProgressHUD
     
-    class RegisterViewController: UIViewController {
+    final class RegisterViewController: UIViewController {
         
         private let spinner = JGProgressHUD(style: .dark)
         
@@ -167,16 +167,16 @@
             lastNameField.resignFirstResponder()
             
             guard let firstName = firstNameField.text,
-                let lastName = lastNameField.text,
-                let email = emailField.text,
-                let password = passwordField.text,
-                !firstName.isEmpty,
-                !lastName.isEmpty,
-                !email.isEmpty,
-                !password.isEmpty,
-                password.count >= 6 else{ //*** add more validations e.g. special characters and numbers
-                    alertUserLogInError()
-                    return
+                  let lastName = lastNameField.text,
+                  let email = emailField.text,
+                  let password = passwordField.text,
+                  !firstName.isEmpty,
+                  !lastName.isEmpty,
+                  !email.isEmpty,
+                  !password.isEmpty,
+                  password.count >= 6 else{ //*** add more validations e.g. special characters and numbers
+                alertUserLogInError()
+                return
             }
             
             spinner.show(in: view)
@@ -209,23 +209,23 @@
                                                lastName: lastName,
                                                emailAddress: email)
                     DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
-                    if success{
-                        //upload image
-                        guard let image = strongSelf.imageView.image,
-                            let data = image.pngData() else{
+                        if success{
+                            //upload image
+                            guard let image = strongSelf.imageView.image,
+                                  let data = image.pngData() else{
                                 return
                             }
-                        
-                        let filename = chatUser.profilePictureFileName
-                        StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
-                            switch result{
-                            case .success(let downloadURL):
-                                UserDefaults.standard.set(downloadURL, forKey: "profile_picture_url")
-                                print(downloadURL)
-                            case .failure(let error):
-                                print("Storage manager error \(error)")
-                            }
-                        })
+                            
+                            let filename = chatUser.profilePictureFileName
+                            StorageManager.shared.uploadProfilePicture(with: data, fileName: filename, completion: { result in
+                                switch result{
+                                case .success(let downloadURL):
+                                    UserDefaults.standard.set(downloadURL, forKey: "profile_picture_url")
+                                    print(downloadURL)
+                                case .failure(let error):
+                                    print("Storage manager error \(error)")
+                                }
+                            })
                         }
                     })
                     strongSelf.navigationController?.dismiss(animated: true, completion: nil)
@@ -280,13 +280,13 @@
                                                 style: .default,
                                                 handler:{ [weak self] _ in
                                                     self?.presentCamera()
-            }))
+                                                }))
             
             actionSheet.addAction(UIAlertAction(title: "Select a Photo",
                                                 style: .default,
                                                 handler:{ [weak self] _ in
                                                     self?.presentPhotoPicker()
-            }))
+                                                }))
             
             present (actionSheet, animated: true)
         }
