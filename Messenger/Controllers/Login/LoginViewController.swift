@@ -14,6 +14,7 @@ import JGProgressHUD
 
 class LoginViewController: UIViewController {
     
+    
     private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView: UIScrollView = {
